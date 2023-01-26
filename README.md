@@ -52,9 +52,9 @@ git revert -n master~5..master~2
 
 Fontes: <br>
 
-[Git Doc](https://git-scm.com/docs/git-revert)
-[Dev.to](https://dev.to/womakerscode/tutorial-git-desfazendo-commits-revert-57c2)
-[medium](https://medium.com/@mstuttgart/desfazendo-commits-com-git-revert-f569c12fa6a6)
+[Git Doc](https://git-scm.com/docs/git-revert)<br>
+[Dev.to](https://dev.to/womakerscode/tutorial-git-desfazendo-commits-revert-57c2)<br>
+[medium](https://medium.com/@mstuttgart/desfazendo-commits-com-git-revert-f569c12fa6a6)<br>
 
 ## git-cherry-pick
 
