@@ -22,3 +22,18 @@ para fazer o rebase de todos os commits entre "outra branch" e o estado atual da
 usamos também 
 git rebase --interactive HEAD~7
 para fazer o rebase dos últimos commits da nossa branch atual (no caso seria 7, por conta do dígito após o "~")
+
+Funcionamento, sintaxe e aplicação do comando git reverse:
+O comando *git reverse* é utilizado para reverter as alterações feitas em um determinado commit ou um intervalo de commits, criando um commit que desfaz todas as modificações que você quer corrigir.
+
+Sintaxe:
+git revert [--[no-]edit] [-n] [-m <parent-number>] [-s] [-S[<keyid>]] <commit>…​
+git revert (--continue | --skip | --abort | --quit)
+
+Uso: 
+Revertendo os ultimos 3 commits:
+git revert HEAD~3
+
+Revertendo commits em um intervalo de commits
+git revert -n master~5..master~2
+
