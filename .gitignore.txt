@@ -1,0 +1,11 @@
+#dependencies
+.vscode/
+
+#testing
+
+#production
+/build
+
+#misc
+.php
+.asp
