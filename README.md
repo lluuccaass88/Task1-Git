@@ -39,12 +39,12 @@ git revert (--continue | --skip | --abort | --quit)
 ```
 
 Uso: <br>
-Revertendo os ultimos 3 commits:
 
+Revertendo os ultimos 3 commits:
 ```
 git revert HEAD~3
 ```
-Revertendo commits em um intervalo de commits
+Revertendo commits em um intervalo de commits:
 ```
 git revert -n master~5..master~2
 ```
@@ -53,6 +53,44 @@ Fontes: <br>
 [Git Doc]https://git-scm.com/docs/git-revert<br>
 [Dev.to] https://dev.to/womakerscode/tutorial-git-desfazendo-commits-revert-57c2<br>
 [medium]https://medium.com/@mstuttgart/desfazendo-commits-com-git-revert-f569c12fa6a6<br>
+
+## git-cherry-pick
+
+É comum e saudável que, durante o desenvolvimento, novas features sejam trabalhadas em branches paralelas à branch principal. Contudo, depois de alguns commits em uma dessas braches paralelas, você acaba descobrindo que há um bug na branch principal que precisa ser corrigido. Mas você ainda não concluiu a feature que está desenvolvendo e, se criar um novo commit com a correção e fizer merge com a branch principal, pode acabar quebrando a aplicação. E é aqui que entra o git cherry-pick. A solução é simples: você cria um novo commit na branch paralela com a correção do bug, faz checkout para a main e, utilizando o git cherry-pick, move apenas esse último commit para a branch principal. Dessa forma, você resolve o bug e ainda pode voltar para a branch paralela para finalizar a feature. Vale ressaltar que o git cherry-pick não é uma boa prática. Para resolver esse mesmo problema, utilizar um hotfix seria o ideal.
+
+```
+git cherry-pick [id-do-commit]
+```
+
+Outras opções que podem ser utilizadas junto com o comando:
+
+-edit: permite que você edite a mensagem do commit
+
+```
+-edit
+```
+
+--no-commit: move o commit de uma branch para a outra sem gerar um novo commit
+
+```
+--no-commit
+```
+
+Fontes:<br>
+[Git Doc](https://git-scm.com/docs/git-cherry-pick)<br>
+[GeekHunter](https://blog.geekhunter.com.br/git-cherry-pick-o-que-e-quando-usar)<br>
+[GeeksForGeeks](https://www.geeksforgeeks.org/git-cherry-pick/)<br>
+[Atlassian](https://www.atlassian.com/br/git/tutorials/cherry-pick)
+
+## git squash
+
+Quando se utiliza o git rebase -i, há duas opções que condensam um grupo de commits em apenas um, sendo elas a squash e a fixup. A principal diferença entre as duas está no fato de que a squash guardará um histórico de que essa operação foi realizada. Ao realizar o comando
+
+```
+git rebase -i
+```
+
+será apresentada uma lista dos commits. No início de todos constará a palavra "pick". Para realizar o squash, basta substituir "pick" por "squash" em todos os commits que serão condensados. Um dos commits deve permanecer como "pick", pois os demais serão condensados nele.
 
 ## git-cherry-pick
 
