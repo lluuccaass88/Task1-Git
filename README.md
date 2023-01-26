@@ -31,6 +31,12 @@ git rebase --interactive HEAD\~7
 ```
 para fazer o rebase dos últimos commits da nossa branch atual (no caso seria 7, por conta do dígito após o "~")<br>
 
+Fontes: <br>
+
+[Git Doc](https://docs.github.com/pt/get-started/using-git/about-git-rebase)<br>
+[Git Doc](https://docs.github.com/pt/get-started/using-git/using-git-rebase-on-the-command-line)<br>
+[Git SCM](https://git-scm.com/docs/git-rebase)<br>
+
 ## git revert:
 
 O comando git revert é utilizado para reverter as alterações feitas em um determinado commit ou um intervalo de commits, criando um commit que desfaz todas as modificações que você quer corrigir. <br>
